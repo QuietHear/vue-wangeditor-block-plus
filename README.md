@@ -4,6 +4,7 @@
 
 ## 安装
 	npm i vue-wangEditor-block-plus
+	// 不需要再安装官方的推荐插件，已内置（@wangeditor/editor、@wangeditor/editor-for-vue）
 
 ## 使用
 	import vueWangeditorBlockPlus from "vue-wangeditor-block-plus";
