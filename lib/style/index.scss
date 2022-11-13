@@ -1,0 +1,36 @@
+/*
+ * @Author: aFei
+ * @Date: 2022-11-10 14:56:59
+*/
+/*
+ * @LastEditors: aFei
+ * @LastEditTime: 2022-11-11 10:38:19
+*/
+html.dark {
+  --w-e-textarea-bg-color: #333;
+  --w-e-textarea-color   : #fff;
+}
+
+.vue-wangEditor-block-plus {
+  --editor-content-height: 500px;
+  border                 : 1px solid #ccc;
+  width                  : 100%;
+
+  &.only-show {
+    border                 : none;
+    --editor-content-height: auto;
+  }
+
+  .editor-toolbar {
+    border-bottom: 1px solid #ccc;
+
+    &.else {
+      height: 80px;
+    }
+  }
+
+  .editor-content {
+    height    : var(--editor-content-height) !important;
+    overflow-y: hidden;
+  }
+}
