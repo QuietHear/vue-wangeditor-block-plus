@@ -1,7 +1,7 @@
 {
   "name": "vue-wangeditor-block-plus",
   "description": "vue3版wangeditor组件",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "aFei <1106728884@qq.com>",
   "license": "MIT",
   "main": "dist/vue-wangeditor-block-plus.umd.js",
@@ -24,7 +24,7 @@
   "repository": "https://github.com/QuietHear/vue-wangeditor-block-plus",
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.2.0",
-    "@wangeditor/editor": "^5.1.22",
+    "@wangeditor/editor": "^5.1.23",
     "@wangeditor/editor-for-vue": "^5.1.12",
     "sass": "^1.53.0",
     "vite": "^3.2.3",

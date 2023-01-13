@@ -4,7 +4,7 @@
 
 ## 安装
 	npm i vue-wangEditor-block-plus
-	// 不需要再安装官方的推荐插件，已内置（@wangeditor/editor、@wangeditor/editor-for-vue）
+	// 不需要再安装官方的推荐插件，已内置（@wangeditor/editor v5.1.23、@wangeditor/editor-for-vue v5.1.12）
 
 ## 使用
 	import vueWangeditorBlockPlus from "vue-wangeditor-block-plus";
@@ -47,6 +47,10 @@
 	为true时会将编辑的配置中默认禁用掉
 >
 
+* `delayInit`：延迟加载-->Number;非必传;默认*0*
+>
+	这个属性可以解决因各种原因（如<transition>组件动画）使dom加载失败的情况
+>
 
 * `@getRef`：初始化成功时触发，会抛出编辑器与工具栏的ref
 
