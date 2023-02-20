@@ -4,7 +4,7 @@
 */
 /*
  * @LastEditors: aFei
- * @LastEditTime: 2023-01-13 15:49:54
+ * @LastEditTime: 2023-02-20 15:10:59
 */
 <template>
   <div :class="['vue-wangEditor-block-plus', onlyShow ? 'only-show' : '']">
@@ -28,7 +28,6 @@ import {
   i18nChangeLanguage,
 } from "@wangeditor/editor";
 import { Editor, Toolbar } from "@wangeditor/editor-for-vue";
-import { ref, nextTick, onBeforeUnmount, shallowRef, watch, onMounted } from "vue";
 const emit = defineEmits(["update:modelValue", "getRef", "change", "destroyed", "focus", "blur"]);
 const props = defineProps({
   // 文本域内容
