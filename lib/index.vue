@@ -4,7 +4,7 @@
 */
 /*
  * @LastEditors: aFei
- * @LastEditTime: 2023-02-20 15:10:59
+ * @LastEditTime: 2023-07-26 15:51:26
 */
 <template>
   <div :class="['vue-wangEditor-block-plus', onlyShow ? 'only-show' : '']">
@@ -70,9 +70,9 @@ const props = defineProps({
   },
   // 自定义扩展
   diyExtend: {
-    type: Object,
+    type: Array,
     default: () => {
-      return {};
+      return [];
     },
   },
   // 编辑器语言
@@ -113,7 +113,9 @@ watch(
   }
 );
 // 注入自定义扩展
-Boot.registerMenu(props.diyExtend);
+props.diyExtend.forEach(item => {
+  Boot.registerMenu(item);
+});
 // 注入新语言库
 props.languageExtend.forEach((item) => {
   i18nAddResources(item.key, item.value);

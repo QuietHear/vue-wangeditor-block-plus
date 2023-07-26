@@ -4,14 +4,14 @@
 */
 /*
  * @LastEditors: aFei
- * @LastEditTime: 2023-02-20 15:10:43
+ * @LastEditTime: 2023-07-26 15:56:19
 */
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import autoImport from "unplugin-auto-import/vite";
 import * as path from 'path';
 
-export default defineConfig(({ command, mode }) => ({
+export default defineConfig(({ command, mode, ssrBuild }) => ({
   esbuild: {
     drop: ['console', 'debugger']
   },

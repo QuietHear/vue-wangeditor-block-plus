@@ -21,14 +21,87 @@
 * `toolbarConfig`：工具栏配置-->Object;非必传
 
 * `editorConfig`：编辑器配置-->Object;非必传
+>
+	// 上传图片配置示例：
+	editorConfig = {
+		MENU_CONF:{
+			uploadImage:{
+				// 接口地址
+				server: '/api/xxx',
+				// 超时时间
+				timeout: 5 * 1000,
+				// 请求额外参数
+				meta: { token: 'xxx', a: 100 },
+				// 参数添加到url上
+				metaWithUrl: true,
+				// 额外请求头
+				headers: { Accept: 'text/x-json' },
+				// 最大文件尺寸
+				maxFileSize: 10 * 1024 * 1024,
+				// 转换为base64格式最大值，超过大小则不转换
+				base64LimitSize: 5 * 1024,
+				// 接口文件字段名
+				fieldName: 'file',
+				// 上传前的操作，组织上传返回false
+				onBeforeUpload(file) {
+					return file;
+					// return false;
+				},
+				// 自定义添加图片，非官方标准接口返回格式时使用
+				customInsert(res, insertFn) {
+					insertFn(url, alt, href);
+				}
+			}
+		}
+	};
+>
 
 * `customPaste`：自定义粘贴事件，详见官方文档-->Function;非必传
 
 * `customAlert`：自定义alert事件，详见官方文档-->Function;非必传
 
-* `diyExtend`：自定义扩展，详见官方文档-->Object;非必传
+* `diyExtend`：自定义扩展，详见官方文档-->Array;非必传
 >
-	这个地方注册的新菜单等，需要自己在toolbarConfig,editorConfig等对应的配置中加入对应的key才能生效
+	// 这个地方注册的新菜单等，需要自己在toolbarConfig,editorConfig等对应的配置中加入对应的key才能生效，按钮类型示例：
+	// 更多类型参考 https://www.wangeditor.com/v5/development.html#buttonmenu
+	class MyButtonMenu {
+		constructor() {
+			// 标题
+			this.title = 'My menu title';
+			// 图标，没有图标时显示标题；有图标时鼠标悬浮显示标题
+			this.iconSvg = '<svg>...</svg>';
+			this.tag = 'button';
+		}
+		// 获取菜单执行时的value，用不到则返回空字符串或false
+		getValue(editor) {
+			return 'hello';
+		}
+		// 菜单是否需要激活（如选中加粗文本，“加粗”菜单会激活），用不到则返回false
+		isActive(editor) {
+			return false;
+		}
+		// 菜单是否需要禁用（如选中 H1 ，“引用”菜单被禁用），用不到则返回false
+		isDisabled(editor) {
+			return false;
+		}
+		// 点击菜单时触发的函数
+		exec(editor, value) {
+			// 自定义操作
+		}
+	}
+	// 使用数组的格式绑定到diyExtend上，例如[menu1Conf]
+	menu1Conf = {
+		key: 'menutest',
+		factory() {
+			return new MyButtonMenu();
+		}
+	};
+	toolbarConfig = {
+		insertKeys:{
+			index: 99,
+			keys: ['menutest']
+		}
+	};
 >
 
 * `language`：编辑器语言，详见官方文档-->String;非必传;默认*'zh-CN'*
