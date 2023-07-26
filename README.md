@@ -87,6 +87,17 @@
 		// 点击菜单时触发的函数
 		exec(editor, value) {
 			// 自定义操作
+			// 例如自定义上传
+			const input = document.createElement('input');
+			input.type = 'file';
+			input.accept = 'image/*';
+			input.addEventListener('change', async () => {
+				const formData = new FormData();
+				formData.append('file', file);
+				// 请求上传接口然后做剩余操作
+				editor.dangerouslyInsertHtml(`<a href="${url}">${name}</a>`);
+			});
+			input.click();
 		}
 	}
 	// 使用数组的格式绑定到diyExtend上，例如[menu1Conf]
