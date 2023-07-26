@@ -147,7 +147,11 @@
 * `@blur`：编辑器blur时触发，会抛出编辑器ref
 
 
-## 2. 官方文档
+## 2. Tip
+	如果系统中配置基本都相同，可以提出配置项为单独的JS文件引用
+
+
+## 3. 官方文档
 [http://www.wangeditor.com/doc/](http://www.wangeditor.com/doc/ '文档')
 
 
