@@ -4,7 +4,7 @@
 */
 /*
  * @LastEditors: aFei
- * @LastEditTime: 2023-07-26 15:51:26
+ * @LastEditTime: 2023-09-21 15:14:47
 */
 <template>
   <div :class="['vue-wangEditor-block-plus', onlyShow ? 'only-show' : '']">
@@ -113,8 +113,12 @@ watch(
   }
 );
 // 注入自定义扩展
-props.diyExtend.forEach(item => {
-  Boot.registerMenu(item);
+nextTick(() => {
+  props.diyExtend.forEach(item => {
+    if (editorRef.value.getAllMenuKeys().indexOf(item.key) === -1) {
+      Boot.registerMenu(item);
+    }
+  });
 });
 // 注入新语言库
 props.languageExtend.forEach((item) => {
