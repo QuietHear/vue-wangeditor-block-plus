@@ -4,13 +4,15 @@
 */
 /*
  * @LastEditors: aFei
- * @LastEditTime: 2023-09-21 15:35:25
+ * @LastEditTime: 2023-09-21 17:24:19
 */
 <template>
   <div class="demo">
-    <el-button @click="onlyShow = !onlyShow">预览切换</el-button>
-    <vue-wangeditor-block-plus v-model="val" :onlyShow="onlyShow" :toolbarConfig="toolbarConfig"
-      :editorConfig="editorConfig" :diyExtend="[upBtn]" @getRef="getRef" />
+    <el-scrollbar>
+      <el-button @click="onlyShow = !onlyShow">预览切换</el-button>
+      <vue-wangeditor-block-plus v-model="val" :onlyShow="onlyShow" :toolbarConfig="toolbarConfig"
+        :editorConfig="editorConfig" :diyExtend="[upBtn]" @getRef="getRef" />
+    </el-scrollbar>
   </div>
 </template>
 <script setup>
