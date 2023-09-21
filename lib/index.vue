@@ -4,7 +4,7 @@
 */
 /*
  * @LastEditors: aFei
- * @LastEditTime: 2023-09-21 15:14:47
+ * @LastEditTime: 2023-09-21 15:58:12
 */
 <template>
   <div :class="['vue-wangEditor-block-plus', onlyShow ? 'only-show' : '']">
@@ -112,14 +112,6 @@ watch(
     }
   }
 );
-// 注入自定义扩展
-nextTick(() => {
-  props.diyExtend.forEach(item => {
-    if (editorRef.value.getAllMenuKeys().indexOf(item.key) === -1) {
-      Boot.registerMenu(item);
-    }
-  });
-});
 // 注入新语言库
 props.languageExtend.forEach((item) => {
   i18nAddResources(item.key, item.value);
@@ -180,6 +172,12 @@ onMounted(() => {
 const editorCreated = (editor) => {
   editorRef.value = editor;
   console.log(editorRef.value, '创建成功');
+  // 注入自定义扩展
+  props.diyExtend.forEach(item => {
+    if (editorRef.value.getAllMenuKeys().indexOf(item.key) === -1) {
+      Boot.registerMenu(item);
+    }
+  });
   nextTick(() => {
     // 抛出编辑器实例与工具栏实例
     emit("getRef", editor, DomEditor.getToolbar(editor));
