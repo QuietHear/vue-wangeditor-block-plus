@@ -22,7 +22,7 @@
 
 * `toolbarConfig`：工具栏配置-->Object;非必传
 
-* `editorConfig`：编辑器配置-->Object;非必传
+* `editorConfig`：编辑器配置，[内置上传图片组件默认配置](https://www.wangeditor.com/v5/menu-config.html#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE '文档')-->Object;非必传
 >
 	// 上传图片配置示例：
 	editorConfig = {

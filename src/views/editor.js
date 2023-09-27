@@ -4,8 +4,9 @@
 */
 /*
  * @LastEditors: aFei
- * @LastEditTime: 2023-09-21 15:31:47
+ * @LastEditTime: 2023-09-27 10:53:14
 */
+import { ElMessage } from 'element-plus';
 class btn {
   constructor() {
     this.title = '上传附件';
@@ -57,6 +58,12 @@ export const editorConfig = {
       fieldName: 'file',
       customInsert(res, insertFn) {
         insertFn(res.data.url, res.data.name);
+      },
+      onFailed(file, res) {
+        ElMessage({ type: 'error', message: res })
+      },
+      onError(file, err, res) {
+        ElMessage({ type: 'error', message: err })
       }
     }
   }
