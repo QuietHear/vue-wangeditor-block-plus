@@ -15,6 +15,16 @@
 	app.use(vueWangeditorBlockPlus);
 
 
+## 0. 可改动样式变量
+* ` --editor-content-height`：500px;-->编辑非全屏模式高度
+
+* `--full-screen-zindex`：10;-->全屏模式时的z-index
+
+* `--editor-content-lineHeight`：1.5;-->内容区域默认行距
+
+* `--editor-content-fontSize`：14px;-->内容区域默认字号
+
+
 ## 1. 参数
 * `v-model`：当前文本内容-->String;非必传;默认*''*
 
@@ -154,7 +164,7 @@
 
 
 ## 3. 官方文档
-[http://www.wangeditor.com/doc/](http://www.wangeditor.com/doc/ '文档')
+[https://www.wangeditor.com/](https://www.wangeditor.com/ '文档')
 
 
 ## 更多vue3组件

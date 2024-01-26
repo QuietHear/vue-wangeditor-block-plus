@@ -4,7 +4,7 @@
 */
 /*
  * @LastEditors: aFei
- * @LastEditTime: 2022-11-11 10:38:19
+ * @LastEditTime: 2024-01-26 14:18:17
 */
 html.dark {
   --w-e-textarea-bg-color: #333;
@@ -12,13 +12,27 @@ html.dark {
 }
 
 .vue-wangEditor-block-plus {
-  --editor-content-height: 500px;
-  border                 : 1px solid #ccc;
-  width                  : 100%;
+  --editor-content-height    : 500px;
+  --full-screen-zindex       : 10;
+  --editor-content-lineHeight: 1.5;
+  --editor-content-fontSize  : 14px;
+  border                     : 1px solid #ccc;
+  width                      : 100%;
+  font-size                  : var(--editor-content-fontSize);
+  word-break                 : break-all;
+  word-wrap                  : break-word;
 
   &.only-show {
     border                 : none;
     --editor-content-height: auto;
+  }
+
+  &.w-e-full-screen-container {
+    z-index: var(--full-screen-zindex);
+
+    .editor-content {
+      height: 100% !important;
+    }
   }
 
   .editor-toolbar {
@@ -32,5 +46,16 @@ html.dark {
   .editor-content {
     height    : var(--editor-content-height) !important;
     overflow-y: hidden;
+
+    .w-e-text-container {
+
+      blockquote,
+      li,
+      p,
+      td,
+      th {
+        line-height: var(--editor-content-lineHeight);
+      }
+    }
   }
 }
