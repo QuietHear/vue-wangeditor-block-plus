@@ -22714,7 +22714,10 @@ const mmt = /* @__PURE__ */ d$("div", { id: "test-id" }, null, -1), bmt = {
     // 编辑器模式('default','simple')
     editorMode: {
       type: String,
-      default: "default"
+      default: "default",
+      validator(t, e) {
+        return ["default", "simple"].includes(t);
+      }
     },
     // 工具栏配置
     toolbarConfig: {

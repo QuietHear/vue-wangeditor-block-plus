@@ -1,10 +1,10 @@
 /*
- * @Author: aFei
- * @Date: 2022-11-10 14:56:59
+* @Author: aFei
+* @Date: 2022-11-10 14:56:59
 */
 /*
  * @LastEditors: aFei
- * @LastEditTime: 2023-09-21 15:58:12
+ * @LastEditTime: 2024-08-09 11:14:12
 */
 <template>
   <div :class="['vue-wangEditor-block-plus', onlyShow ? 'only-show' : '']">
@@ -39,6 +39,9 @@ const props = defineProps({
   editorMode: {
     type: String,
     default: "default",
+    validator(value, props) {
+      return ['default', 'simple'].includes(value);
+    }
   },
   // 工具栏配置
   toolbarConfig: {

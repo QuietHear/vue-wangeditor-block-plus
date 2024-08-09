@@ -1,12 +1,15 @@
 # wangEditor（vue3版）
 ***vue3版本*** | [**vue2版本**](https://github.com/QuietHear/vue-wangEditor-block '右键新窗口浏览')
 
+
 ## 预览
 	clone项目后npm run preview即可
+
 
 ## 安装
 	npm i vue-wangeditor-block-plus
 	// 不需要再安装官方的推荐插件，已内置（@wangeditor/editor v5.1.23、@wangeditor/editor-for-vue v5.1.12）
+
 
 ## 使用
 	import vueWangeditorBlockPlus from "vue-wangeditor-block-plus";
@@ -28,7 +31,7 @@
 ## 1. 参数
 * `v-model`：当前文本内容-->String;非必传;默认*''*
 
-* `editorMode`：编辑器的展示模式-->String;非必传;默认*'default'*
+* `editorMode`：编辑器的展示模式，校验变量只能是'default'/'simple'-->String;非必传;默认*'default'*
 
 * `toolbarConfig`：工具栏配置-->Object;非必传
 
@@ -168,4 +171,4 @@
 
 
 ## 更多vue3组件
-[**自定义右键菜单**](https://github.com/QuietHear/vue-diy-rightmenu-plus '右键新窗口浏览') | [**可拖拽菜单**](https://github.com/QuietHear/vue-drag-menu-plus '右键新窗口浏览') | [**echarts组件**](https://github.com/QuietHear/vue-echarts-block-plus '右键新窗口浏览') | [**基于el-menu的菜单组件**](https://github.com/QuietHear/vue-ele-nav-plus '右键新窗口浏览') | [**面包屑组件**](https://github.com/QuietHear/vue-permission-breads-plus '右键新窗口浏览') | [**滑动拼图**](https://github.com/QuietHear/vue-puzzle-slider-plus '右键新窗口浏览') | [**工作日历**](https://github.com/QuietHear/vue-shop-calendar-plus '右键新窗口浏览') | [**多页签组件**](https://github.com/QuietHear/vue-tabs-plus '右键新窗口浏览') | ***wangEditor*** | [**年密度组件**](https://github.com/QuietHear/vue-year-density-plus '右键新窗口浏览')
+[**自定义右键菜单**](https://github.com/QuietHear/vue-diy-rightmenu-plus '右键新窗口浏览') | [**拖拽卡片布局组件**](https://github.com/QuietHear/vue-drag-component-plus '右键新窗口浏览') | [**可拖拽菜单**](https://github.com/QuietHear/vue-drag-menu-plus '右键新窗口浏览') | [**echarts组件**](https://github.com/QuietHear/vue-echarts-block-plus '右键新窗口浏览') | [**基于el-menu的菜单组件**](https://github.com/QuietHear/vue-ele-nav-plus '右键新窗口浏览') | [**面包屑组件**](https://github.com/QuietHear/vue-permission-breads-plus '右键新窗口浏览') | [**滑动拼图**](https://github.com/QuietHear/vue-puzzle-slider-plus '右键新窗口浏览') | [**工作日历**](https://github.com/QuietHear/vue-shop-calendar-plus '右键新窗口浏览') | [**多页签组件**](https://github.com/QuietHear/vue-tabs-plus '右键新窗口浏览') | [**uEditor**](https://github.com/QuietHear/vue-ueditor-block-plus '右键新窗口浏览') | ***wangEditor*** | [**年密度组件**](https://github.com/QuietHear/vue-year-density-plus '右键新窗口浏览')
